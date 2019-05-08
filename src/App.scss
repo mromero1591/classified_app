@@ -59,7 +59,7 @@ body {
 
   .navbar-search {
     color: $main-color;
-    transition: 1s;
+    transition: .6s;
   }
 
   .navbar-search-section {
@@ -70,22 +70,23 @@ body {
     position: relative;
     opacity: 0;
     max-height: 0px;
-    transition: 1s ease-out;
     z-index: -1;
+    transition: .6s ease-out;
+    
   }
 
   .navbar-search-section-active {
     opacity: 1;
     max-height: 500px;
     z-index: 0;
-    transition: 1s ease-in;    
+    transition: .6s ease-in;    
   }
 
   .search-active {
     position: relative;
     opacity: 0;
     transform: rotate(45deg) translateY(40px);
-    transition: 1s;
+    transition: .6s;
   }
 
   .navbar-items {
