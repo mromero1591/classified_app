@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+
+//Custom Imports
+import NavBar from './Components/NavBar/NavBar';
+import routes from '../src/routes';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <main className="App">
+      <NavBar />
+      {routes}
+    </main>
   );
 }
 
