@@ -1,6 +1,7 @@
 $dark-shades: #444978;
 $light-accent: #F8F8F7;
 $main-color: #D95F4F;
+$default-text: #2F2F2F;
 /* Border box declaration 
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
@@ -19,14 +20,72 @@ body {
   font-size: 16px;
 }
 
+//Reusable classes
+.input {
+  background: none;
+  border: none;
+  height: 40px;
+  font-size: 14px;
+  line-height: 5px;
+  padding: 20px 20px 20px 0px;
+  border-bottom: 2px $default-text solid;
+  width: 100%;
+}
+
+.input:active, .input:focus {
+  outline: none;
+}
 
 .navbar {
   padding: 20px 0px 20px 0px;
   
+  //Common navbar classes.
+  .navbar-link {
+    text-decoration: none;
+    color: $default-text;
+  }
+
   .navbar-logos {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+    cursor: pointer;
+    align-items: center;
+    .navbar-logo {
+      color: $dark-shades;
+      font-weight: 700;
+    }
+  }
+
+  .navbar-search {
+    color: $main-color;
+    transition: 1s;
+  }
+
+  .navbar-search-section {
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+    margin-right: 40px;
+    position: relative;
+    opacity: 0;
+    max-height: 0px;
+    transition: 1s ease-out;
+    z-index: -1;
+  }
+
+  .navbar-search-section-active {
+    opacity: 1;
+    max-height: 500px;
+    z-index: 0;
+    transition: 1s ease-in;    
+  }
+
+  .search-active {
+    position: relative;
+    opacity: 0;
+    transform: rotate(45deg) translateY(40px);
+    transition: 1s;
   }
 
   .navbar-items {
@@ -41,7 +100,7 @@ body {
     z-index: 1;
     height: 100vh;
     background-color: $dark-shades;
-    transition: .8s;
+    transition: .7s;
   }
 
   .navbar-item {
@@ -50,6 +109,7 @@ body {
     margin-bottom: 20px;
     text-align: initial;
     width: 50%;
+    cursor: pointer;
   }
 
   .close-menu-icon {
@@ -59,6 +119,7 @@ body {
     position: absolute;
     top: 25px;
     left: 40px;
+    cursor: pointer;
   }
 
   .menu-open {
@@ -74,3 +135,5 @@ body {
     color: $main-color;
   }
 }
+
+
