@@ -1,5 +1,5 @@
 import React from 'react';
-import {Heart} from 'react-feather';
+import {Eye} from 'react-feather';
 import {Link} from 'react-router-dom';
 
 export default function ItemCard(props) {
@@ -31,7 +31,7 @@ export default function ItemCard(props) {
 
       <div className="item-card-footer">
         <div className="item-card-count">
-          <Heart fill="#D95F4F" className='item-card-count-logo'/>
+          <Eye className='item-card-count-logo'/>
           <span>{props.item.view_count}</span>
         </div>
       </div>

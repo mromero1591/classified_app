@@ -28,12 +28,13 @@ export default class ItemPage extends Component {
         var id = parseInt(this.props.match.params.id);
         Axios.get(`/api/item/${id}`)
         .then(res => {
+            console.log(res.data);
             var {id, title, description, price, view_count, created_on, img, name_first, name_last, email_address, phone_number, city, state} = res.data[0];
             let date = new Date(created_on);
             let today = new Date();
             let day = today.getDay() - date.getDay();
             this.setState({
-                id: id, 
+                id, 
                 title, 
                 description, 
                 price, 

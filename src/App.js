@@ -10,15 +10,6 @@ import routes from '../src/routes';
 import {updateItems} from './ducks/itemsReducer/itemsReducer';
 
 class App extends Component {
-  componentDidMount() {
-    Axios.get('/api/items')
-    .then(res => {
-      this.props.updateItems(res.data);
-    }).catch(err => {
-      console.log('Error in getting the data', err);
-    });
-  }
-
   render() {
     return (
       <main className="App">

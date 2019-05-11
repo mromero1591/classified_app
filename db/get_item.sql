@@ -12,6 +12,6 @@ SELECT i.id,
        c.city,
        c.state
 FROM items AS i
-JOIN item_contacts AS c ON (i.contact_id = c.id)
-JOIN users AS u ON (i.user_id = u.id)
+LEFT JOIN item_contacts AS c ON (i.contact_id = c.id)
+LEFT JOIN users AS u ON (i.user_id = u.id)
 WHERE i.id = $1;
