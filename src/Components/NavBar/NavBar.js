@@ -71,16 +71,16 @@ function NavBar(props) {
                 </div>
             </div>
 
-            <NavBarSearch active={activeSearch} updateActiveSearch={updateActiveSearch}/>
-
             <div className={`navbar-items ${openMenu ? 'menu-open' : ''}`}>
                 <X onClick={() => {setOpenMenu(openMenu ? false : true)}} className={`close-menu-icon ${openMenu ? 'menu-open-icon' : ''}`} />
-                <Link to='/' onClick={() => updateActiveLink('home')} className={`navbar-link navbar-item ${linkStates.home ? 'active-link' : ''}`} ><span><Home /> Home Page</span></Link>
-                <Link to='/search' onClick={() => updateActiveLink('search')} className={`navbar-link navbar-item ${linkStates.search ? 'active-link' : ''}`} ><span><Search /> Search Listings</span></Link>
-                <Link to='/saved' onClick={() => updateActiveLink('saved')} className={`navbar-link navbar-item ${linkStates.saved ? 'active-link' : ''}`} ><span><Heart /> Saved Listings</span></Link>
-                <Link to='/create' onClick={() => updateActiveLink('create')} className={`navbar-link navbar-item ${linkStates.create ? 'active-link' : ''}`} ><span><PlusSquare /> Create Listings</span></Link>
-                <Link to='/profile' onClick={() => updateActiveLink('profile')} className={`navbar-link navbar-item ${linkStates.profile ? 'active-link' : ''}`} ><span><User /> My Profile</span></Link>
+                <Link to='/' onClick={() => updateActiveLink('home')} className={`navbar-link navbar-item ${linkStates.home ? 'active-link' : ''}`} ><span><Home className='navbar-icon'/> Home Page</span></Link>
+                <Link to='/search' onClick={() => updateActiveLink('search')} className={`navbar-link navbar-item ${linkStates.search ? 'active-link' : ''}`} ><span><Search className='navbar-icon'/> Search Listings</span></Link>
+                <Link to='/saved' onClick={() => updateActiveLink('saved')} className={`navbar-link navbar-item ${linkStates.saved ? 'active-link' : ''}`} ><span><Heart className='navbar-icon'/> Saved Listings</span></Link>
+                <Link to='/create' onClick={() => updateActiveLink('create')} className={`navbar-link navbar-item ${linkStates.create ? 'active-link' : ''}`} ><span><PlusSquare className='navbar-icon'/> Create Listings</span></Link>
+                <Link to='/profile' onClick={() => updateActiveLink('profile')} className={`navbar-link navbar-item ${linkStates.profile ? 'active-link' : ''}`} ><span><User className='navbar-icon'/> My Profile</span></Link>
             </div>
+            <NavBarSearch active={activeSearch} updateActiveSearch={updateActiveSearch}/>
+            
         </nav>
     );
 

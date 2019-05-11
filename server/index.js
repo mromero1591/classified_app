@@ -1,8 +1,8 @@
 require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
+const itemsController = require('./controllers/itemsController');
 
 const app = express();
 app.use(bodyParser.json());
@@ -15,6 +15,10 @@ massive(DATABASE_URI)
 }).catch(err => {
     console.log('error when setting massive:', err);
 });
+
+
+//End Points
+app.get('/api/items', itemsController.getItems);
 
 //listening port
 app.listen(SERVER_PORT, () => {
