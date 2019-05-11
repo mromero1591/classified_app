@@ -8,7 +8,7 @@ import ItemCard from '../ItemComponents/ItemCard/ItemCard';
 function HomePage(props) {
   const displayCards = props.items.map( item => {
     return (
-      <ItemCard key={item.id} item={item} />
+      <ItemCard item={item} key={item.id} />
     )
   })
 

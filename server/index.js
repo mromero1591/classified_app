@@ -19,6 +19,7 @@ massive(DATABASE_URI)
 
 //End Points
 app.get('/api/items', itemsController.getItems);
+app.get('/api/item/:id', itemsController.getItem);
 
 //listening port
 app.listen(SERVER_PORT, () => {

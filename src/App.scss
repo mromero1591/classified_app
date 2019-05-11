@@ -22,20 +22,15 @@ body {
 }
 
 .App {
+  position: relative;
   display: grid;
-  height: 100%;
-  grid-template-areas: 
-    "navbar"
-    "main"
-    "footer"
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 
 }
 
-main {
-  grid-area: main;
-}
-.navbar {
-  grid-area: navbar;
+.main-content {
+  padding-bottom: 100px;
 }
 
 //Reusable classes
@@ -143,6 +138,7 @@ main {
       text-align: initial;
       width: 50%;
       cursor: pointer;
+      transition: .07s;
     }
   
     .close-menu-icon {
@@ -159,7 +155,7 @@ main {
       width: 90%;
       left: 0;
     }
-  
+
     .menu-open-icon {
       display: block;
     }
@@ -191,7 +187,7 @@ main {
   justify-content: center;
   background-color: #F8F8F7;
   border-radius: 20px;
-  box-shadow: 13px 17px 16px 0px rgba(0,0,0,0.31);
+  box-shadow: 7px 9px 16px 0px rgba(0, 0, 0, 0.31);
   min-width: 310px;
 }
 
@@ -227,6 +223,7 @@ main {
 }
 
 .item-card-title {
+  text-decoration: none;
   color: $dark-shades;
   font-size: 16px;
   font-weight: bold;
@@ -242,15 +239,89 @@ main {
 }
 
 
-//FOOTER =======================================
+
+//ITEM PAGE=====================================================================================================================
+.item-page {
+  display: grid;
+  grid-template-areas: 
+    "img"
+    "description"
+}
+.item-page-img{
+  grid-area: img;
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+}
+.item-page-header {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  margin: 50px 0px;
+  .section-title {
+    padding-bottom: 0px;
+  }
+}
+
+.item-page-description {
+  padding: 0px 40px;
+}
+
+.item-page-contact-info {
+  min-height: 203px;
+  background-color: $dark-shades;
+  border-radius: 20px;
+  margin: 40px 10px; 
+  display: flex;
+  flex-flow: column nowrap;
+  color: $light-accent;
+
+  .line {
+    height: 1px;
+    margin: 20px 0px;
+    background-color: $grey-accent;
+    align-self: center;
+    width: 90%;
+    color: $grey-accent;
+  }
+}
+
+.item-page-container {
+  padding-left: 20px;
+}
+
+.item-page-spacer { 
+  padding: 20px 20px;
+
+}
+
+.contact-card-title {
+  padding-top: 20px;
+  color: $main-color;
+  align-self: center;
+}
+
+.item-page-subtitle {
+  padding-bottom: 10px;
+}
+
+.location-info {
+  font-weight: 100;
+}
+
+//FOOTER =======================================================================================================================
 .footer {
   background-color: $dark-shades;
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-area: footer;
   height: 100px;
   color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
   a {
     text-decoration: none;
     color: $main-color;
@@ -261,6 +332,9 @@ main {
     cursor: pointer;
   }
 }
+
+
+
 
 //Tablet
 @import './styles/tabletStyles.scss';
