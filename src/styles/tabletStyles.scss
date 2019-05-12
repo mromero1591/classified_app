@@ -82,4 +82,34 @@
     .navbar-item {
         margin-right: 20px;
     }
+
+    .item-card-container {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+
+    .item-card {
+        display: block;
+    }
+
+    .item-card-body {
+        display: flex;
+        padding: 10px;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .item-page-img {
+        height: 500px;
+    }
+
+    .item-page-info {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .item-page-contact-info {
+        align-self: center;
+        width: 500px;
+    }
 }

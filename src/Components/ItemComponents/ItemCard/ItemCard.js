@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 export default function ItemCard(props) {
   let date = new Date(props.item.created_on);
   let today = new Date();
-  let day = today.getDay() - date.getDay();
+  let day =  date.getDay() - today.getDay();
 
   return (
     <div className='item-card'>

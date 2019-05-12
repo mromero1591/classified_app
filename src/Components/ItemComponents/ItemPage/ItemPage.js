@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Axios from 'axios';
-import {Mail, Smartphone} from 'react-feather';
+import {Mail, Phone} from 'react-feather';
 
 export default class ItemPage extends Component {
     constructor(props) {
@@ -24,6 +24,7 @@ export default class ItemPage extends Component {
             }
         }
     }
+    
     componentDidMount() {
         var id = parseInt(this.props.match.params.id);
         Axios.get(`/api/item/${id}`)
@@ -32,7 +33,7 @@ export default class ItemPage extends Component {
             var {id, title, description, price, view_count, created_on, img, name_first, name_last, email_address, phone_number, city, state} = res.data[0];
             let date = new Date(created_on);
             let today = new Date();
-            let day = today.getDay() - date.getDay();
+            let day = date.getDay() - today.getDay();
             this.setState({
                 id, 
                 title, 
@@ -92,10 +93,9 @@ export default class ItemPage extends Component {
                                 {this.state.contactInfo.name_first}
                             </div>
                             <a href={`mailto:${this.state.contactInfo.email_address}`}><Mail color='#D95F4F'  /></a>
-                            <a href={`tel:${this.state.contactInfo.phone_number}`}><Smartphone  color='#D95F4F'/></a>
+                            <a href={`tel:${this.state.contactInfo.phone_number}`}><Phone  color='#D95F4F'/></a>
                         </div>
                     </div>
-
                 </div>
             </div>)
     }
